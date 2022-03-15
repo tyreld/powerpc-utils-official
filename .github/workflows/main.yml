@@ -86,7 +86,7 @@ jobs:
 
     - name: configure
       run: |
-       ./configure --prefix=/usr --host=${{ matrix.host }} --disable-werror --build=x86_64-linux-gnu CFLAGS='-O2 -g'
+       ./configure --prefix=/usr --host=${{ matrix.host }} --disable-werror --build=x86_64-linux-gnu CFLAGS='-O2 -g -Werror=stringop-truncation'
 
     - name: Collect config.log
       if: ${{ failure() }}
